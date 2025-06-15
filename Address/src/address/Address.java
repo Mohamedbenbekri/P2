@@ -307,7 +307,24 @@ public static Address[] einfuegenAddress(Address[] addr, Address ich) {
 
     return nAddr;
 }
-
+public static Address[] suchenNachNachname(Address[] addr, String suchNachname) {
+  if (addr == null || suchNachname == null) return new Address[0];
     
+    int anzahl = 0;
+    for (Address a : addr) {
+        if (a != null && a.getNachname() != null && 
+            a.getNachname().equalsIgnoreCase(suchNachname)) anzahl++;
+    }
+    
+    Address[] ergebnis = new Address[anzahl];
+    int j = 0;
+    for (Address a : addr) {
+        if (a != null && a.getNachname() != null && 
+            a.getNachname().equalsIgnoreCase(suchNachname)) {
+            ergebnis[j++] = a;
+        }
+    }
+    return ergebnis;
     
 }// END Class Address
+}
