@@ -24,6 +24,11 @@ public class arraytest {
         int[]resultat_Einfugen =insertSortedArray(value, original);
         
         
+        System.out.print("Original Array");
+        for(int i: original){
+            System.out.print(i+" ");
+        }
+        System.out.println();
         
         //Einfügen und Löschen von einem Wert im Array 
         System.out.print("Original  Array nach dem Einfuegen  von '45': ");
@@ -33,15 +38,20 @@ public class arraytest {
         }
                  System.out.println();
 
-        System.out.print("Original  Array nach Loeschung von dem Index 0 : ");
-        int []resultat_löschen =deleteElement(original, 0);
-        
-         for(int i : resultat_löschen){
+        System.out.print("Original  Array nach Loeschung nach dem Index 1 : ");
+        int []resultat_löschen_nach_index =deleteElement(original, 0);
+        int [] resultat_löschen_nach_wert=deleteElementByValue(original, value);
+         for(int i : resultat_löschen_nach_index){
             System.out.print(i+ " ");
             
 
         }
-         
+         System.out.println();
+                 System.out.print("Original  Array nach Loeschung nach dem Wert 1 : ");
+
+            for(int i : resultat_löschen_nach_wert){
+            System.out.print(i+ " ");
+            }
          //Binäre Suche sowie sequenntiele Suche 
                  int [] sortiert = {1,2,3,4,5,6,6,7};
 
@@ -279,4 +289,27 @@ public static void BubbleSort1StringReverse(String []ia2) {
 
     
 }
+public static int[] deleteElementByValue(int[] array, int value) {
+    // Zählen, wie oft der Wert vorkommt
+    int count = 0;
+    for (int i : array) {
+        if (i == value) count++;
+    }
+
+    // Wenn der Wert nicht vorhanden ist, das Original zurückgeben
+    if (count == 0) return array;
+
+    // Neues Array mit weniger Plätzen für jeden Treffer
+    int[] newArray = new int[array.length - count];
+    int j = 0;
+
+    for (int i = 0; i < array.length; i++) {
+        if (array[i] != value) {
+            newArray[j++] = array[i];
+        }
+    }
+
+    return newArray;
+}
+
 }
