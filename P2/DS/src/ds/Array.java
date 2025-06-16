@@ -40,7 +40,8 @@ public class Array {
     malzwei.add(10);
     System.out.println("Ein ArrayList mit Int verdoplleten Wert und mit Ausgabe des Indexes  ");
     for(Integer a:malzwei) {
-    	System.out.println(a*2);
+    	System.out.println("Hier mit (*2)   "+a*2);
+    	System.out.println("Hier mit der Methode doppel  "+doppel(a));
     	System.out.println("Den Index von: "+a+"  ist: "+malzwei.indexOf(a));
     	
     }
@@ -73,6 +74,11 @@ public class Array {
     
     
             }
+    
+    
+    public static Integer doppel(Integer a) {
+    	return a*2;
+    }
     
     
 }
