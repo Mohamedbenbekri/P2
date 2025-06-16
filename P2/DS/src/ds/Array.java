@@ -34,6 +34,22 @@ public class Array {
     mohamed.add("Benbekri");
     mohamed.add("Meryem");
     
+    
+    ArrayList <Integer>malzwei=new ArrayList<Integer>();
+    malzwei.add(1);
+    malzwei.add(10);
+    System.out.println("Ein ArrayList mit Int verdoplleten Wert und mit Ausgabe des Indexes  ");
+    for(Integer a:malzwei) {
+    	System.out.println(a*2);
+    	System.out.println("Den Index von: "+a+"  ist: "+malzwei.indexOf(a));
+    	
+    }
+    
+    
+    
+    
+    
+    
     Iterator it =mohamed.iterator();
 
     while(it.hasNext()){
