@@ -44,6 +44,8 @@ public class Array {
     	System.out.println("Hier mit der Methode doppel  "+doppel(a));
     	System.out.println("Den Index von: "+a+"  ist: "+malzwei.indexOf(a));
     	
+    	System.out.print("Hallo");
+    	
     }
     
     
